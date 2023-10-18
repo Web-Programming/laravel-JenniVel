@@ -11,5 +11,8 @@ Jika error
 - composer instal lewat terminal cmd lagi
 - Tunggu selesai install
 - php artisan key:generate
-- php artisan serve ( untuk menjalankan web )
 > Sebelum generate pastikan membuat clone .envexample dengan nama .env
+
+- Untuk tes browser
+- php artisan serve ( untuk menjalankan web )
+- klik link di terminal (cth : http://127.0.0.1:8000)

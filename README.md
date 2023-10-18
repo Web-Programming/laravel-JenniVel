@@ -12,3 +12,7 @@ Jika error
 - Tunggu selesai install
 - php artisan key:generate
 > Sebelum generate pastikan membuat clone .envexample dengan nama .env
+
+- Untuk tes browser
+- php artisan serve ( untuk menjalankan web )
+- klik link di terminal (cth : http://127.0.0.1:8000)

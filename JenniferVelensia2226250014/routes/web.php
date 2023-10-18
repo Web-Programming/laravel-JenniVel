@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\DosenController;
+use App\Http\Controllers\KurikulumController;
+use App\Http\Controllers\ProdiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,7 +54,7 @@ Route::get('/halo', function () {
 //Route Group
 
 Route::prefix("/dosen")->group(function(){
-    
+
 Route::get('/jadwal', function () {
     echo "<h2>Jadwal Dosen</h2>";
 });
@@ -70,15 +73,21 @@ Route::get('/dosen/index', function () {
 });
 
 Route::get('/fakultas', function () {
-    // return view('fakultas.index', ["ilkom" => "Fakultas Ilmu Komputer 
+    // return view('fakultas.index', ["ilkom" => "Fakultas Ilmu Komputer
     // dan Rekayasa"]);
-    // return view('fakultas.index', ["fakultas" => ["Fakultas Ilmu Komputer 
+    // return view('fakultas.index', ["fakultas" => ["Fakultas Ilmu Komputer
     // dan Rekayasa", "Fakultas Ekonomi dan Bisnis"]]);
-    // return view('fakultas.index')-> with("fakultas", ["Fakultas Ilmu Komputer 
+    // return view('fakultas.index')-> with("fakultas", ["Fakultas Ilmu Komputer
     // dan Rekayasa", "Fakultas Ekonomi dan Bisnis"]);
     //    $fakultas = [];
-      $fakultas = ["Fakultas Ilmu Komputer 
+      $fakultas = ["Fakultas Ilmu Komputer
     dan Rekayasa", "Fakultas Ekonomi dan Bisnis"];
     $kampus = "Universitas Multi Data Palembang";
     return view('fakultas.index', compact ('fakultas', 'kampus'));
 });
+
+Route::get('/prodi', [ProdiController::class, 'index']);
+
+Route::resource('/kurikulum', KurikulumController::class);
+
+Route::apiResource('/dosen', DosenController::class);

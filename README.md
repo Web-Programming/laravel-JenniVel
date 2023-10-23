@@ -11,5 +11,8 @@ jika error
 - selanjutnya copy .env.example dan ubah namanya .env
 - php artisan key:generate
 - php artisan serve untuk menjalankan program
+
+Saat menghubungkan dengan database
+- gunakan database phpMyAdmin
+- periksa .env databasenya sesuai dengan yang dipakai
 - 
-  

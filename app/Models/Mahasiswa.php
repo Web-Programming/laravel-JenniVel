@@ -17,4 +17,11 @@ class Mahasiswa extends Model
 
     //mengatur kolom yang tidak boleh di isi
     // protected $guard =  [];
+
+    // Menghubungkan tabel mahasiswas dengan tabel prodis
+    //nama method singular tanpa tambahan 's' karena one to one relationship
+
+    public function prodi(){
+        return $this->belongsTo("App\Models\Prodi");
+    }
 }

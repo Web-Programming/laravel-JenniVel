@@ -21,14 +21,16 @@ class MahasiswaController extends Controller
 
         //Mass Assignment
         $Mahasiswa = Mahasiswa::insert(
-            ['nama'=>'VelensiaS',
+            ['nama'=>'Jennifer',
             'npm'=>'2226250017',
             'tempat_lahir'=> 'Palembang',
-            'tanggal_lahir'=> date("Y-m-d")],
-            ['nama'=>'Santoti',
+            'tanggal_lahir'=> date("Y-m-d"),
+            'prodi_id'=> '1'],
+            ['nama'=>'Velensia',
             'npm'=>'2226250016',
             'tempat_lahir'=> 'Bandung',
-            'tanggal_lahir'=> date("Y-m-d")]
+            'tanggal_lahir'=> date("Y-m-d"),
+            'prodi_id' => '2']
         );
            dump($Mahasiswa);
     }
@@ -53,5 +55,11 @@ class MahasiswaController extends Controller
         //dump($allmahasiswa);
         return view("mahasiswa.index", ["allmahasiswa"=> $mahasiswa,"kampus"=> $kampus]);
      }
+
+     public function allJoinElq(){
+        $kampus = "Universitas Multi Data Palembang";
+        $mahasiswa = Mahasiswa::has('prodi')->get();
+        return view('mahasiswa.index', ['allmahasiswa'=> $mahasiswa,'kampus' => $kampus]);
+    }
 }
 

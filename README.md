@@ -41,6 +41,9 @@ Cara membuat data di php :
 $table->string(‘nama’)->first();
 }
 
+Untuk seeder: php artisan db:seed
 
+Untuk link storage :
+php artisan storage:link
 
 
